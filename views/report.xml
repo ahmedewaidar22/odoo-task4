@@ -1,0 +1,59 @@
+<odoo>
+
+    <data>
+        <template id="HMS_patient_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1>Patient Status Report</h1>
+                            <div class="w-25 h-25">
+                                <span field="o.avatar"/>
+                            </div>
+
+                            <table class="table">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Email</th>
+                                    <th>Birth day</th>
+                                    <th>PCR</th>
+                                    <th>Blood type</th>
+                                    <th>Department</th>
+                                    <th>Doctors</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.First_name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.Age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.Email"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.Birth_date"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.PCR"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.departments_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.doctor_id"/>
+                                    </td>
+
+
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

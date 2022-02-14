@@ -1,0 +1,56 @@
+<odoo>
+
+
+    <data>
+        <record id="iti_Doctor_tree_view" model="ir.ui.view">
+            <field name="name">iti hms Doctor tree view</field>
+            <field name="model">hms.doctors</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <group>
+                        <field name="First_name"/>
+                        <field name="Last_name"/>
+                        <field name="Image"/>
+
+
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="iti_Department_form_view" model="ir.ui.view">
+            <field name="name">iti hms Doctor form view</field>
+            <field name="model">hms.doctors</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <group>
+                        <field name="First_name"/>
+                        <field name="Last_name"/>
+                        <field name="Image"/>
+
+
+                    </group>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="iti_Doctor_action" model="ir.actions.act_window">
+            <field name="name">Doctors</field>
+            <field name="res_model">hms.doctors</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="create_Doctor_menu"
+                  parent="create_patient_root_menu"
+                  action="iti_Doctor_action"
+                  groups="iti_manger_group"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+iti_user_access_patients,iti user access patients,model_hms_patients,HMS.iti_user_group,1,1,1,0
+iti_user_access_departments,iti user access departments,model_hms_departments,HMS.iti_user_group,1,0,0,0
+iti_user_access_doctors,iti user access doctors,model_hms_doctors,HMS.iti_user_group,1,0,0,0
+
+iti_manger_access_patients,iti manger group patients,model_hms_patients,HMS.iti_manger_group,1,1,1,1
+iti_manger_access_departments,iti manger group departments,model_hms_departments,HMS.iti_manger_group,1,1,1,1
+iti_manger_access_doctors,iti manger group doctors,model_hms_doctors,HMS.iti_manger_group,1,1,1,1

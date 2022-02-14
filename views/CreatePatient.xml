@@ -1,0 +1,60 @@
+<odoo>
+
+
+    <data>
+        <record id="iti_hms_form_view" model="ir.ui.view">
+            <field name="name">iti hms form view</field>
+            <field name="model">hms.patients</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <header>
+
+                        <button type="object" name="Undetermined" string=" Undetermined"/>
+                        <button type="object" name="Good" string="set Good"/>
+                        <button type="object" name="Fair" string="set Fair"/>
+                        <button type="object" name="Serious" string="set Serious"/>
+                        <field name="state" widget="statusbar"/>
+
+                    </header>
+                    <sheet>
+                        <group>
+
+                            <field name="First_name" required="True"/>
+                            <field name="Last_name" required="True"/>
+                            <field name="Email" required="True"/>
+                        </group>
+                        <group>
+                            <field name="Birth_date"/>
+                            <field name="Age" readonly="True"/>
+                            <field name="Address"/>
+                        </group>
+                        <group>
+                            <field name="website"/>
+                            <field name="History" attrs="{'invisible':[('Age','&lt;','50')]}"/>
+                            <field name="Image"/>
+                        </group>
+                        <group>
+                            <field name="CR_ratio" attrs="{'required':[('PCR','=',True)]}"/>
+                            <field name="Blood_type"/>
+                            <field name="PCR"/>
+                            <field name="Capacity"/>
+                            <field name="departments_id" domain="[('is_opened','=',True)]"/>
+
+                            <field name="doctor_id" widget="many2many_tags"
+                                   attrs="{'readonly':[('departments_id','=',False)]}" groups="HMS.iti_manger_group"/>
+
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="iti_hms_action" model="ir.actions.act_window">
+            <field name="name">HMS</field>
+            <field name="res_model">hms.patients</field>
+        </record>
+        <menuitem id="create_patient_root_menu" name="create_patient"/>
+        <menuitem id="create_patient_menu" parent="create_patient_root_menu" action="iti_hms_action"/>
+    </data>
+</odoo>

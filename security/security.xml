@@ -1,0 +1,22 @@
+<odoo>
+
+    <data>
+        <record id="iti_HMS_category" model="ir.module.category">
+            <field name="name">HMS groups</field>
+        </record>
+
+        <record id="iti_user_group" model="res.groups">
+            <field name="name">iti users</field>
+            <field name="category_id" ref="iti_HMS_category"/>
+        </record>
+        <record id="iti_manger_group" model="res.groups">
+            <field name="name">iti manger</field>
+            <field name="implied_ids" eval="[(4,ref('HMS.iti_user_group'))]"/>
+            <field name="category_id" ref="iti_HMS_category"/>
+
+        </record>
+
+
+    </data>
+
+</odoo>
